@@ -1,15 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+import Routes from './routes';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-            <h1>Dani</h1>>
-          Learn React
-      </header>
+    <div className="App">       
+         <Routes />
     </div>
   );
 }
