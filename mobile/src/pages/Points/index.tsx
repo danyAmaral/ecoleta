@@ -19,6 +19,7 @@ interface Point {
     id: number,
     name: string,
     image: string,
+    image_url: string,
     latitude: number,
     longitude: number,
 }
@@ -62,12 +63,13 @@ const routeParams = route.params as Params;
                items: selectedItems
             }
         }).then(response => {
+            console.log(response.data);
             setpoints(response.data);
         });
     }, [selectedItems]);
 
     useEffect(() => {
-        API.get('items').then(response => {
+        API.get('items').then(response => {       
             setItems(response.data);
         });
     }, []);
@@ -120,7 +122,7 @@ const routeParams = route.params as Params;
                                   <View style={styles.mapMarkerContainer}>
                                       <Image
                                           style={styles.mapMarkerImage}
-                                          source={{ uri: point.image }}
+                                          source={{ uri: point.image_url }}
                                       />
                                       <Text style={styles.mapMarkerTitle}>{point.name}</Text>
                                   </View>

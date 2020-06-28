@@ -1,6 +1,6 @@
 import express from 'express';
 import knex from '../database/connection';
-import {API, EXPO} from '../../util/api';
+import {API} from '../../util/api';
 
 import {Request, Response } from 'express';
 
@@ -13,7 +13,7 @@ class ItemsController {
           return {
             id: item.id,
             title: item.title,
-            image_url: `${EXPO}uploads/${item.image}`
+            image_url: `${API}uploads/${item.image}`
           };
         })
       
